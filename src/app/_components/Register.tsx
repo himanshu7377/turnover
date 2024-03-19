@@ -3,6 +3,8 @@
 import { useState } from "react";
 import ButtonComponent from "./ButtonComponent";
 
+
+
 const Register = () => {
   const [formData, setFormData] = useState({
     username: "",
@@ -38,8 +40,10 @@ const Register = () => {
   };
 
   return (
+   
+    
     <div className="flex items-center justify-center  ">
-      <div className="mt-20 h-[691px] w-[576px]  rounded-lg  border bg-white p-8  shadow-md ">
+      <div className="mt-10 h-[691px] w-[576px]  rounded-lg  border bg-white p-8  shadow-md ">
         <div className="ml-16 h-[39px] w-[316px] justify-center text-end ">
           <h1 className="text-3xl font-bold ">Create your account</h1>
         </div>
@@ -78,15 +82,7 @@ const Register = () => {
               className="w-full rounded-md border border-gray-300 px-3 py-2 focus:border-blue-500 focus:outline-none"
             />
           </div>
-          {/* <div className='pt-5'>
-                    <button
-                        type="submit"
-                        className="bg-black text-white py-2 px-4 rounded-md w-[456px] h-[56px] "
-                    >
-                        <p className='text-center justify-center w-[162px] h-[19px]'>CREATE ACCOUNT</p>
-                        
-                    </button>
-                    </div> */}
+          
           <ButtonComponent buttonText="CREATE ACCOUNT" />
           <div className="flex justify-center ">
             <div className="h-[19px] w-[204px] ">
@@ -102,6 +98,7 @@ const Register = () => {
         </form>
       </div>
     </div>
+    
   );
 };
 
