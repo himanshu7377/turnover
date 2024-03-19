@@ -6,6 +6,7 @@ import '../styles/globals.css'
 import Header from './_components/Header'
 import Add from './_components/Add'
 import Verify from './_components/Verify'
+import Login from './_components/Login'
 
 
 export default async function Home() {
@@ -16,7 +17,8 @@ export default async function Home() {
       <Header/>
       <Add/>
    {/* <Register/> */}
-   <Verify/>
+   {/* <Verify/> */}
+   <Login/>
     </main>
   
   )
