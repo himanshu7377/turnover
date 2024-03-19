@@ -1,7 +1,7 @@
-import { type Config } from "tailwindcss";
-import { fontFamily } from "tailwindcss/defaultTheme";
+// tailwind.config.js
+const { fontFamily } = require('tailwindcss/defaultTheme');
 
-export default {
+module.exports = {
   content: ["./src/**/*.tsx"],
   theme: {
     extend: {
@@ -11,4 +11,4 @@ export default {
     },
   },
   plugins: [],
-} satisfies Config;
+};
