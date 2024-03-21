@@ -90,7 +90,7 @@ const Login = () => {
             <div className="h-[19px] w-[264px]">
               <p className="text-center">
                 Don't have an account?{" "}
-                <a href="/signup" className="text-xl font-medium text-black">
+                <a href="/register" className="text-xl font-medium text-black">
                   SIGN UP
                 </a>
               </p>

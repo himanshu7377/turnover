@@ -1,11 +1,18 @@
 // components/Register.jsx
 "use client";
 import { useState } from "react";
+// import { useRouter } from 'next/router';
 import ButtonComponent from "./ButtonComponent";
+import { Redirect } from "next";
+import Verify from "./Verify";
+
+
+
 
 
 
 const Register = () => {
+  // const router = useRouter();
   const [formData, setFormData] = useState({
     username: "",
     email: "",
@@ -20,8 +27,9 @@ const Register = () => {
     e.preventDefault();
     // Logic to handle form submission
     console.log(formData); // Example: Output form data to console
+   
     try {
-      const response = await fetch("/api/register", {
+      const response = await fetch("api/trpc/register", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -31,8 +39,11 @@ const Register = () => {
       if (response.ok) {
         console.log("User registered successfully!");
         // Redirect to a success page or perform any other action
+        // Redirect(Verify)
+        // router.push("/verify");
+        
       } else {
-        console.error("Failed to register user:", await response.text());
+        console.error("Failed to register user from front-end:", await response.text());
       }
     } catch (error) {
       console.error("Error registering user:", error);
@@ -53,10 +64,11 @@ const Register = () => {
             <label className="mb-1 block">Name:</label>
             <input
               type="text"
-              name="name"
+              name="username"
               placeholder="Enter your Name"
               value={formData.username}
               onChange={handleChange}
+              required
               className="w-full rounded-md border border-gray-300 px-3 py-2 focus:border-blue-500 focus:outline-none"
             />
           </div>
@@ -66,6 +78,7 @@ const Register = () => {
               type="email"
               name="email"
               placeholder="Enter your Email"
+              required
               value={formData.email}
               onChange={handleChange}
               className="w-full rounded-md border border-gray-300 px-3 py-2 focus:border-blue-500 focus:outline-none"
@@ -78,12 +91,13 @@ const Register = () => {
               name="password"
               placeholder="Enter Password"
               value={formData.password}
+              required
               onChange={handleChange}
               className="w-full rounded-md border border-gray-300 px-3 py-2 focus:border-blue-500 focus:outline-none"
             />
           </div>
           
-          <ButtonComponent buttonText="CREATE ACCOUNT" />
+          <ButtonComponent buttonText="CREATE ACCOUNT"  />
           <div className="flex justify-center ">
             <div className="h-[19px] w-[204px] ">
               <p className="text-center space-x-1 ">

@@ -16,9 +16,9 @@ export default async function Home() {
     <main>
       <Header/>
       <Add/>
-   {/* <Register/> */}
+   <Register/>
    {/* <Verify/> */}
-   <Login/>
+   {/* <Login/> */}
     </main>
   
   )
